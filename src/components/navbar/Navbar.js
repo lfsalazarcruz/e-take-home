@@ -7,7 +7,7 @@ class Navbar extends Component {
     return (
       <div className="navbar-container">
         {/* <h3 className="navbar-subtitle">welcome to </h3> */}
-        <h1 className="navbar-title">GIFR</h1>
+        <h1 className="navbar-title">Gifr</h1>
         <Searchbar />
       </div>
     );

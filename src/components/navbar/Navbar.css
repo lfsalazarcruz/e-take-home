@@ -2,6 +2,8 @@
   border: 1px solid blue;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* .navbar-container .navbar-subtitle {
@@ -15,5 +17,6 @@
   padding: 5px 20px;
   font-size: 3rem;
   margin: 0;
-  letter-spacing: 1px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
 }
