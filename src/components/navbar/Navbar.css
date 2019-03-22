@@ -1,0 +1,19 @@
+.navbar-container {
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+}
+
+/* .navbar-container .navbar-subtitle {
+  padding: 0 5px 0 20px;
+  font-size: 1.4rem;
+  margin: 0;
+  letter-spacing: 1px;
+} */
+
+.navbar-container .navbar-title {
+  padding: 5px 20px;
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
