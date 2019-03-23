@@ -10,9 +10,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${
-      process.env.REACT_APP_KEY
-    }&limit=5`;
+    const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=20`;
 
     axios
       .get(endpoint)

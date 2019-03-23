@@ -1,0 +1,15 @@
+.gifs-container {
+  display: flex;
+  justify-content: center;
+}
+
+.gifs-innercontainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1100px;
+}
+
+.gif-card {
+  /* border: 1px solid green; */
+  margin: 10px;
+}
