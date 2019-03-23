@@ -1,10 +1,22 @@
 import React, { Component } from "react";
-import axios from "axios";
 
-class GifsContainer extends Component {
-  render() {
-    return <div className="gifs-container">This is the gifs container</div>;
-  }
-}
+const GifsContainer = props => {
+  return (
+    <div className="gifs-container">
+      <li className="gif-card">
+        {props.gifs.map(data => (
+          <div>
+            <h1>{data.title}</h1>
+            <img
+              src={data.images.preview_gif.url}
+              width="200px"
+              height="200px"
+            />
+          </div>
+        ))}
+      </li>
+    </div>
+  );
+};
 
 export default GifsContainer;
