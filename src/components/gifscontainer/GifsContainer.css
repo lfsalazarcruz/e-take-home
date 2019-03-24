@@ -14,22 +14,28 @@
 
 .gif-card {
   /* border: 1px solid green; */
-  margin: 10px;
+  margin: 10px 10px 25px;
 }
 
 /*========== when you hover over a gif========= */
 .gif-hover-container {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 200px;
-  height: 200px;
+  height: 40px;
 }
 
 .gif-hover-container .gif-title {
   color: black;
-  margin: 0 10px;
+  margin: 5px 10px 0;
+  font-family: "Roboto";
+  font-size: 0.8rem;
+  text-align: left;
 }
 
 .gif-hover-container .gif-link p {
   color: #ff1fcb;
-  margin: 10px;
+  margin: 5px 10px;
+  font-family: "Roboto";
+  font-size: 0.8rem;
+  text-align: left;
 }
