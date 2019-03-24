@@ -1,14 +1,17 @@
 .navbar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   /* background-color: #313131; */
   background-color: #1a1a1a;
   z-index: 300;
   position: sticky;
   top: 0;
-  opacity: 0.96;
+  /* opacity: 0.96; */
+}
+
+.navbar-inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* .navbar-container .navbar-subtitle {
@@ -18,11 +21,16 @@
   letter-spacing: 1px;
 } */
 
-.navbar-container .navbar-title {
-  padding: 5px 20px;
+.navbar-inner-container .navbar-title {
+  padding: 5px 30px;
   font-size: 3rem;
   margin: 0;
   letter-spacing: 10px;
   text-transform: lowercase;
   font-family: "Patua One";
 }
+
+/* .navbar-divider {
+  background-image: linear-gradient(to right, #ca14a0, #c2108d);
+  height: 4px;
+} */

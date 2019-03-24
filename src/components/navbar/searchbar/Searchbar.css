@@ -1,7 +1,8 @@
 .searchbar-container {
   display: flex;
   align-items: center;
-  margin: 0 20px;
+  margin: 0 30px;
+  /* border: 1px solid blue; */
 }
 
 .searchbar-container .search-input {
@@ -12,7 +13,8 @@
   outline: none;
   padding: 0 10px;
   background-image: linear-gradient(to right, #ca14a0, #f3142c);
-  margin: 0 105px 0 0;
+  /* margin: 0 105px 0 0; */
+  margin-right: 20px;
   font-size: 1rem;
   font-weight: lighter;
   color: #fff;
@@ -25,8 +27,8 @@
 }
 
 .searchbar-container .search-button {
-  position: absolute;
-  right: 20px;
+  /* position: absolute; */
+  /* right: 20px; */
   border-radius: 50px;
   border: none;
   /* background-image: linear-gradient(to right, #f3142c, #ca14a0); */

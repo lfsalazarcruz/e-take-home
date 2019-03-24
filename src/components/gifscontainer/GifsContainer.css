@@ -25,7 +25,8 @@
 }
 
 .gif-hover-container .gif-title {
-  color: black;
+  /* color: black; */
+  color: rgba(51, 51, 51, 0.7);
   margin: 5px 10px 0;
   font-family: "Roboto";
   font-size: 0.8rem;
@@ -38,4 +39,9 @@
   font-family: "Roboto";
   font-size: 0.8rem;
   text-align: left;
+}
+
+.gif-hover-container .gif-link p:hover {
+  cursor: pointer;
+  color: #c5179d;
 }
