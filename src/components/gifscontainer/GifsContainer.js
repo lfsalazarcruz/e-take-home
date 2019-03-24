@@ -12,6 +12,12 @@ const GifsContainer = props => {
               width="200px"
               height="200px"
             />
+            <div className="gif-hover-container">
+              <h5 className="gif-title">{data.title}</h5>
+              <a className="gif-link">
+                <p>See more</p>
+              </a>
+            </div>
           </div>
         ))}
       </div>

@@ -16,3 +16,20 @@
   /* border: 1px solid green; */
   margin: 10px;
 }
+
+/*========== when you hover over a gif========= */
+.gif-hover-container {
+  border: 1px solid blue;
+  width: 200px;
+  height: 200px;
+}
+
+.gif-hover-container .gif-title {
+  color: black;
+  margin: 0 10px;
+}
+
+.gif-hover-container .gif-link p {
+  color: #ff1fcb;
+  margin: 10px;
+}

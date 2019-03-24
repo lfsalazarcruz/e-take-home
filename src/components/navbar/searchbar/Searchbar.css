@@ -21,7 +21,7 @@
 }
 
 ::-webkit-input-placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .searchbar-container .search-button {
@@ -38,12 +38,12 @@
   transition: all 0.3s;
   letter-spacing: 0.5px;
   /* color: #1a1a1a; */
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .searchbar-container .search-button:hover {
   cursor: pointer;
   background-image: linear-gradient(to right, #8a0d6c, #ca14a0);
   color: white;
-  border: 3px solid white;
+  /* border: 2px solid white; */
 }
