@@ -20,6 +20,10 @@
   /* color: #1a1a1a; */
 }
 
+::-webkit-input-placeholder {
+  color: white;
+}
+
 .searchbar-container .search-button {
   position: absolute;
   right: 20px;
