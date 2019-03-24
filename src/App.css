@@ -1,3 +1,15 @@
 .App {
   margin: 0 auto;
 }
+
+.App .navbar-divider {
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    #f3142abd,
+    #f3142cde,
+    10px,
+    #a70f83de 10px,
+    #ca14a0d0 20px
+  );
+}

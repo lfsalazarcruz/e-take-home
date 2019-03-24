@@ -11,9 +11,13 @@
   border: none;
   outline: none;
   padding: 0 10px;
-  background-image: linear-gradient(to right, #f3142c, #ca14a0);
+  background-image: linear-gradient(to right, #ca14a0, #f3142c);
   margin: 0 105px 0 0;
   font-size: 1rem;
+  font-weight: lighter;
+  color: #fff;
+  letter-spacing: 0.5px;
+  /* color: #1a1a1a; */
 }
 
 .searchbar-container .search-button {
@@ -21,16 +25,21 @@
   right: 20px;
   border-radius: 50px;
   border: none;
-  background-image: linear-gradient(to right, #f3142c, #ca14a0);
+  /* background-image: linear-gradient(to right, #f3142c, #ca14a0); */
+  background-color: #f3142c;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  font-weight: lighter;
   padding: 8px 20px;
   transition: all 0.3s;
+  letter-spacing: 0.5px;
+  /* color: #1a1a1a; */
+  color: #fff;
 }
 
 .searchbar-container .search-button:hover {
   cursor: pointer;
-  background-image: linear-gradient(to right, #8a0d6c, #a70c1c);
+  background-image: linear-gradient(to right, #8a0d6c, #ca14a0);
   color: white;
   border: 3px solid white;
 }

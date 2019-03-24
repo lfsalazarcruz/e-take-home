@@ -3,6 +3,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  /* background-color: #313131; */
+  background-color: #1a1a1a;
+  z-index: 300;
+  position: sticky;
+  top: 0;
 }
 
 /* .navbar-container .navbar-subtitle {
@@ -17,5 +22,6 @@
   font-size: 3rem;
   margin: 0;
   letter-spacing: 10px;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-family: "Patua One";
 }

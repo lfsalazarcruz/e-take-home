@@ -30,6 +30,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        {/* <div className="navbar-divider" /> */}
         <GifsContainer gifs={this.state.gifs} />
       </div>
     );
