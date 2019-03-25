@@ -50,6 +50,8 @@ class GifView extends Component {
   }
 
   render() {
+    let { gifusername } = this.state;
+
     if (this.state.gifdata) {
       return (
         <div className="gif-view-card">
@@ -63,9 +65,13 @@ class GifView extends Component {
           </div>
           <div className="gif-view-item">
             <h2 className="gif-view-title">{this.state.giftitle}</h2>
-            <h3 className="gif-view-username">
-              Created by: {this.state.gifusername}
-            </h3>
+            <div>
+              {gifusername ? (
+                <h3 className="gif-view-username">Created by: {gifusername}</h3>
+              ) : (
+                <h3 className="gif-view-username">Created by: unknown</h3>
+              )}
+            </div>
             <h4 className="gif-view-rating">Rating: {this.state.gifrating}</h4>
           </div>
         </div>
