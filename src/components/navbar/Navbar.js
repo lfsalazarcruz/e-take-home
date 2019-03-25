@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Searchbar from "./searchbar/Searchbar";
 
 class Navbar extends Component {
+  state = {
+    term: ""
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+    console.log("search for this title: ", this.state.term);
+  };
+
   render() {
     return (
       <div className="navbar-container">
@@ -11,7 +20,21 @@ class Navbar extends Component {
           <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
             <h1 className="navbar-title">Gifr</h1>
           </Link>
-          <Searchbar onTermChange={this.props.onTermChange} />
+          <form
+            className="searchbar-container"
+            onSubmit={this.props.onTermChange}
+          >
+            <input
+              className="search-input"
+              placeholder="Look for the best trending GIFs!"
+              type="text"
+              onChange={this.handleChange}
+              name="term"
+            />
+            <button className="search-button" type="submit">
+              search
+            </button>
+          </form>
         </div>
         <div className="navbar-divider" />
       </div>
