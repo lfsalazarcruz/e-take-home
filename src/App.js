@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Route, withRouter } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import GifsContainer from "./components/gifscontainer/GifsContainer";
+import GifView from "./components/gifview/GifView";
 
 class App extends Component {
   state = {
@@ -30,11 +32,20 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        {/* <div className="navbar-divider" /> */}
-        <GifsContainer gifs={this.state.gifs} />
+
+        <Route
+          exact
+          path="/"
+          render={props => <GifsContainer {...props} gifs={this.state.gifs} />}
+        />
+        <Route
+          exact
+          path="/view-gif/:id"
+          render={props => <GifView {...props} gifs={this.state.gifs} />}
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
