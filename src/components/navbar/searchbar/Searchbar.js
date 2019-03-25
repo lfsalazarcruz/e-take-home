@@ -3,24 +3,24 @@ import "./Searchbar.css";
 
 class SearchBar extends Component {
   state = {
-    giftitle: ""
+    term: ""
   };
 
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-    console.log("search for this title: ", this.state.giftitle);
+    console.log("search for this title: ", this.state.term);
   };
 
   render() {
     return (
-      <form className="searchbar-container">
+      <form className="searchbar-container" onSubmit={this.props.onTermChange}>
         <input
           className="search-input"
           placeholder="Look for the best trending GIFs!"
           type="text"
           onChange={this.handleChange}
-          name="giftitle"
+          name="term"
         />
         <button className="search-button" type="submit">
           search

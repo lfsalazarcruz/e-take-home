@@ -8,11 +8,10 @@ class Navbar extends Component {
     return (
       <div className="navbar-container">
         <div className="navbar-inner-container">
-          {/* <h3 className="navbar-subtitle">welcome to </h3> */}
           <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
             <h1 className="navbar-title">Gifr</h1>
           </Link>
-          <Searchbar />
+          <Searchbar onTermChange={this.props.onTermChange} />
         </div>
         <div className="navbar-divider" />
       </div>

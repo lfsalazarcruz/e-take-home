@@ -28,10 +28,34 @@ class App extends Component {
       });
   }
 
+  // handleTermSearch = term => {
+  //   // event.preventDefault();
+  //   const endpoint = `http://api.giphy.com/v1/gifs/search?q=${term}?api_key=${REACT_APP_KEY}`;
+
+  //   axios
+  //     .get(endpoint)
+  //     .then(gifs => {
+  //       console.log(gifs);
+  //       this.setState({
+  //         gifs: gifs.data.data
+  //       });
+  //       console.log("this are the gifs searched: ", this.state.gifs);
+  //     })
+  //     .catch(error => {
+  //       console.error("Server Error: ", error);
+  //     });
+  // };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+    console.log("search for this title: ", this.state.term);
+  };
+
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar onTermChange={this.handleTermSearch} />
 
         <Route
           exact
