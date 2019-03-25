@@ -9,7 +9,12 @@ class GifView extends Component {
       gifs: props.gifs,
       gif: {},
       gifdata: [],
-      gifimage: ""
+      gifimage: "",
+      gifwidth: "",
+      gifheight: "",
+      gifusername: "",
+      giftitle: "",
+      gifrating: ""
     };
   }
 
@@ -30,9 +35,14 @@ class GifView extends Component {
         console.log(gif);
         this.setState({
           gifdata: gif.data.data,
-          gifimage: gif.data.data.images.preview_gif.url
+          gifimage: gif.data.data.images.preview_gif.url,
+          gifwidth: gif.data.data.images.preview_gif.width,
+          gifheight: gif.data.data.images.preview_gif.height,
+          gifusername: gif.data.data.username,
+          giftitle: gif.data.data.title,
+          gifrating: gif.data.data.rating
         });
-        console.log(`this is gif`, this.state.gifdata.id);
+        console.log(`this is gif`, this.state.gifdata.username);
       })
       .catch(error => {
         console.error("Server Error: ", error);
@@ -42,9 +52,22 @@ class GifView extends Component {
   render() {
     if (this.state.gifdata) {
       return (
-        <div className="gif-title">
-          <h1 className="gif-title">{this.state.gifdata.id}</h1>
-          <img src={this.state.gifimage} />
+        <div className="gif-view-card">
+          <div className="gif-view-item">
+            <img
+              src={this.state.gifimage}
+              width="400px"
+              height="400px"
+              role="presentation"
+            />
+          </div>
+          <div className="gif-view-item">
+            <h2 className="gif-view-title">{this.state.giftitle}</h2>
+            <h3 className="gif-view-username">
+              Created by: {this.state.gifusername}
+            </h3>
+            <h4 className="gif-view-rating">Rating: {this.state.gifrating}</h4>
+          </div>
         </div>
       );
     } else {
