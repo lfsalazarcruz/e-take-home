@@ -7,9 +7,12 @@ import GifsContainer from "./components/gifscontainer/GifsContainer";
 import GifView from "./components/gifview/GifView";
 
 class App extends Component {
-  state = {
-    gifs: []
-  };
+  constructor() {
+    super();
+    this.state = {
+      gifs: []
+    };
+  }
 
   componentDidMount() {
     const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=20`;
@@ -28,28 +31,21 @@ class App extends Component {
       });
   }
 
-  // handleTermSearch = term => {
-  //   // event.preventDefault();
-  //   const endpoint = `http://api.giphy.com/v1/gifs/search?q=${term}?api_key=${REACT_APP_KEY}`;
-
-  //   axios
-  //     .get(endpoint)
-  //     .then(gifs => {
-  //       console.log(gifs);
-  //       this.setState({
-  //         gifs: gifs.data.data
-  //       });
-  //       console.log("this are the gifs searched: ", this.state.gifs);
-  //     })
-  //     .catch(error => {
-  //       console.error("Server Error: ", error);
-  //     });
-  // };
-
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-    console.log("search for this title: ", this.state.term);
+  handleTermSearch = term => {
+    const endpoint = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=${REACT_APP_KEY}`;
+    console.log(term);
+    axios
+      .get(endpoint)
+      .then(gifs => {
+        console.log(gifs);
+        this.setState({
+          gifs: gifs.data.data
+        });
+        console.log("this are the gifs searched: ", this.state.gifs);
+      })
+      .catch(error => {
+        console.error("Server Error: ", error);
+      });
   };
 
   render() {

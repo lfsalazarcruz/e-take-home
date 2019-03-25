@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 class Navbar extends Component {
-  state = {
-    term: ""
-  };
+  constructor() {
+    super();
+    this.state = {
+      term: ""
+    };
+  }
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-    console.log("search for this title: ", this.state.term);
+  onInputChange = term => {
+    this.setState({ term });
+    this.props.onTermChange(term);
   };
 
   render() {
@@ -20,21 +22,21 @@ class Navbar extends Component {
           <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
             <h1 className="navbar-title">Gifr</h1>
           </Link>
-          <form
+          <div
             className="searchbar-container"
-            onSubmit={this.props.onTermChange}
+            // onSubmit={this.props.onTermChange}
           >
             <input
               className="search-input"
               placeholder="Look for the best trending GIFs!"
               type="text"
-              onChange={this.handleChange}
+              onChange={event => this.onInputChange(event.target.value)}
               name="term"
             />
             <button className="search-button" type="submit">
               search
             </button>
-          </form>
+          </div>
         </div>
         <div className="navbar-divider" />
       </div>
