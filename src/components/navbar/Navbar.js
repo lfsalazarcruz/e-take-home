@@ -18,27 +18,18 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar-container">
-        <div className="navbar-inner-container">
-          <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
-            <h1 className="navbar-title">Gifr</h1>
-          </Link>
-          <form
-            className="searchbar-container"
-            // onSubmit={event => this.onInputChange(event.target.value)}
-          >
-            <input
-              className="search-input"
-              placeholder="Look for the best trending GIFs!"
-              type="text"
-              onChange={event => this.onInputChange(event.target.value)}
-              name="term"
-            />
-            {/* <button className="search-button" type="submit">
-              search
-            </button> */}
-          </form>
+        <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
+          <h1 className="navbar-title">Gifr</h1>
+        </Link>
+        <div className="searchbar-container">
+          <input
+            className="search-input"
+            placeholder="Look for the best trending GIFs!"
+            type="text"
+            onChange={event => this.onInputChange(event.target.value)}
+            name="term"
+          />
         </div>
-        <div className="navbar-divider" />
       </div>
     );
   }

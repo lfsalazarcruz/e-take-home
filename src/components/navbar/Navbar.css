@@ -1,27 +1,15 @@
 .navbar-container {
-  /* background-color: #313131; */
   background-color: #1a1a1a;
   z-index: 300;
   position: sticky;
   top: 0;
-  /* opacity: 0.96; */
-}
-
-.navbar-inner-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-/* .navbar-container .navbar-subtitle {
-  padding: 0 5px 0 20px;
-  font-size: 1.4rem;
-  margin: 0;
-  letter-spacing: 1px;
-} */
-
-.navbar-inner-container .navbar-title {
+.navbar-container .navbar-title {
   padding: 5px 30px;
   font-size: 3rem;
   margin: 0;
@@ -29,11 +17,6 @@
   text-transform: lowercase;
   font-family: "Patua One";
 }
-
-/* .navbar-divider {
-  background-image: linear-gradient(to right, #ca14a0, #c2108d);
-  height: 4px;
-} */
 
 .searchbar-container {
   display: flex;
@@ -49,7 +32,6 @@
   outline: none;
   padding: 0 10px;
   background-image: linear-gradient(to right, #ca14a0, #f3142c);
-  /* margin-right: 20px; */
   font-size: 1rem;
   font-weight: lighter;
   color: #fff;
@@ -60,20 +42,43 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
-.searchbar-container .search-button {
-  border-radius: 50px;
-  border: none;
-  background-color: #f3142c;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: lighter;
-  padding: 8px 20px;
-  transition: all 0.3s;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.9);
+/* ================= media queries =================== */
+
+@media (max-width: 760px) {
+  .navbar-container .navbar-title {
+    font-size: 2rem;
+    padding-right: 20px;
+  }
+
+  .searchbar-container {
+    margin-left: 0;
+  }
+
+  .searchbar-container .search-input {
+    width: 300px;
+  }
 }
 
-.searchbar-container .search-button:hover {
-  cursor: pointer;
-  background-color: #ff1fcb;
+@media (max-width: 530px) {
+  .searchbar-container .search-input {
+    width: 220px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchbar-container {
+    width: 85%;
+    padding: 5px 30px 10px;
+    margin: 0;
+  }
+
+  .searchbar-container .search-input {
+    width: 100%;
+  }
 }
