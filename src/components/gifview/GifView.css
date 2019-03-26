@@ -8,9 +8,10 @@
   display: flex;
   justify-content: center;
   height: 500px;
-  border: 0.5px solid black;
+  border: 2px solid #d21fff98;
   margin: 0 30px;
-  box-shadow: 5px 10px 10px #7777776e;
+  /* box-shadow: 5px 10px 10px #7777776e; */
+  /* box-shadow: 5px 8px 8px #d21fff98; */
   border-radius: 3px;
 }
 
@@ -33,7 +34,7 @@
 
 .gif-view-item .gif-view-title {
   padding: 20px 40px 0;
-  color: black;
+  /* color: black; */
   font-family: "Roboto";
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -49,7 +50,7 @@
 }
 
 .gif-view-item .gif-view-username {
-  color: #777777d3;
+  color: #9c9c9c;
   padding: 0 40px;
   font-family: "Roboto";
   text-align: right;
@@ -57,7 +58,7 @@
 }
 
 .gif-view-item .gif-view-rating {
-  color: #777777d3;
+  color: #9c9c9c;
   padding: 0 40px 40px;
   font-family: "Roboto";
   margin: 0;
@@ -83,7 +84,7 @@
 }
 
 .gif-view-link:hover {
-  box-shadow: 5px 8px 8px #7a7a7a63;
+  /* box-shadow: 5px 8px 8px #d21fff98; */
   background-color: #d21fff;
 }
 
@@ -99,7 +100,7 @@
   }
 
   .gif-view-card .gif-view-item:first-child {
-    background-color: #fff;
+    /* background-color: #fff; */
   }
 
   .gif-view-card .gif-view-item:last-child {
