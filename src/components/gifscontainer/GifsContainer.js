@@ -31,7 +31,9 @@ const GifsContainer = props => {
         <button className="moregifs-button" onClick={props.moreGifs}>
           +
         </button>
-        <p>more GIFS!</p>
+        <button className="moregifs-button" onClick={props.lessGifs}>
+          -
+        </button>
       </div>
     </div>
   );

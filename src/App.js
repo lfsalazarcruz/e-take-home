@@ -6,6 +6,8 @@ import Navbar from "./components/navbar/Navbar";
 import GifsContainer from "./components/gifscontainer/GifsContainer";
 import GifView from "./components/gifview/GifView";
 
+const REACT_APP_KEY = "PRVX7etZ3mUpVNhRL1yBaAd32YkjNXQD";
+
 class App extends Component {
   constructor() {
     super();
@@ -46,19 +48,7 @@ class App extends Component {
         this.setState({
           gifs: gifs.data.data
         });
-        console.log("this are the gifs searched: ", this.state.gifs);
-      })
-      .then(gifs => {
-        const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${
-          this.state.moregifs
-        }`;
-        if (this.state.gifs.length < 1) {
-          axios.get(endpoint).then(gifs => {
-            this.setState({
-              gifs: gifs.data.data
-            });
-          });
-        }
+        console.log("gifs searched: ", this.state.gifs);
       })
       .catch(error => {
         console.error("Server Error: ", error);
@@ -67,10 +57,10 @@ class App extends Component {
 
   moreGifs = () => {
     this.setState({
-      moregifs: this.state.moregifs + 5
+      moregifs: this.state.moregifs + 3
     });
     const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${this
-      .state.moregifs + 5}`;
+      .state.moregifs + 3}`;
     console.log(this.state.moregifs);
     axios
       .get(endpoint)
@@ -86,6 +76,35 @@ class App extends Component {
       });
   };
 
+  lessGifs = () => {
+    if (this.state.moregifs === 1) {
+      this.setState({
+        moregifs: this.state.moregifs
+      });
+      console.log(this.state.moregifs);
+      alert("STOP! DON'T DO THAT!");
+    } else if (this.state.moregifs > 1) {
+      this.setState({
+        moregifs: this.state.moregifs - 1
+      });
+      const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${this
+        .state.moregifs - 1}`;
+      console.log(this.state.moregifs);
+      axios
+        .get(endpoint)
+        .then(gifs => {
+          console.log(gifs);
+          this.setState({
+            gifs: gifs.data.data
+          });
+          console.log("this are the gifs: ", this.state.gifs);
+        })
+        .catch(error => {
+          console.error("Server Error: ", error);
+        });
+    }
+  };
+
   render() {
     return (
       <div className="App">
@@ -98,6 +117,7 @@ class App extends Component {
               {...props}
               gifs={this.state.gifs}
               moreGifs={this.moreGifs}
+              lessGifs={this.lessGifs}
             />
           )}
         />
