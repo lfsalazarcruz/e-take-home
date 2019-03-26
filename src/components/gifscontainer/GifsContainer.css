@@ -1,6 +1,6 @@
 .gifs-container {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .gifs-innercontainer {
@@ -40,5 +40,42 @@
 
 .gif-hover-container .gif-link p:hover {
   cursor: pointer;
-  color: #c5179d;
+  color: #d21fff;
+}
+
+.moregifs-container {
+  border: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px 60px;
+}
+
+.moregifs-button {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  border-radius: 100%;
+  padding: 3px 15px 8.7px 15px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #ff1fcb;
+  color: #fff;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.moregifs-container:last-child {
+  color: #ff1fcb;
+}
+
+.moregifs-container:hover {
+  color: #d21fff;
+}
+
+.moregifs-button:hover {
+  background-color: #d21fff;
+  cursor: pointer;
+  box-shadow: 5px 8px 8px #7a7a7a63;
 }

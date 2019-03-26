@@ -22,9 +22,9 @@ class Navbar extends Component {
           <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
             <h1 className="navbar-title">Gifr</h1>
           </Link>
-          <div
+          <form
             className="searchbar-container"
-            // onSubmit={this.props.onTermChange}
+            // onSubmit={event => this.onInputChange(event.target.value)}
           >
             <input
               className="search-input"
@@ -33,10 +33,10 @@ class Navbar extends Component {
               onChange={event => this.onInputChange(event.target.value)}
               name="term"
             />
-            <button className="search-button" type="submit">
+            {/* <button className="search-button" type="submit">
               search
-            </button>
-          </div>
+            </button> */}
+          </form>
         </div>
         <div className="navbar-divider" />
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./GifView.css";
 
 class GifView extends Component {
@@ -54,25 +55,40 @@ class GifView extends Component {
 
     if (this.state.gifdata) {
       return (
-        <div className="gif-view-card">
-          <div className="gif-view-item">
-            <img
-              src={this.state.gifimage}
-              width="400px"
-              height="400px"
-              role="presentation"
-            />
-          </div>
-          <div className="gif-view-item">
-            <h2 className="gif-view-title">{this.state.giftitle}</h2>
-            <div>
-              {gifusername ? (
-                <h3 className="gif-view-username">Created by: {gifusername}</h3>
-              ) : (
-                <h3 className="gif-view-username">Created by: unknown</h3>
-              )}
+        <div className="gif-view-container">
+          <div className="gif-view-card">
+            <div className="gif-view-item">
+              <img
+                src={this.state.gifimage}
+                width="400px"
+                height="400px"
+                role="presentation"
+              />
             </div>
-            <h4 className="gif-view-rating">Rating: {this.state.gifrating}</h4>
+            <div className="gif-view-item">
+              <h2 className="gif-view-title">{this.state.giftitle}</h2>
+              <div>
+                {gifusername ? (
+                  <h3 className="gif-view-username">
+                    Created by: {gifusername}
+                  </h3>
+                ) : (
+                  <h3 className="gif-view-username">Created by: unknown</h3>
+                )}
+              </div>
+              <h4 className="gif-view-rating">
+                Rating: {this.state.gifrating}
+              </h4>
+            </div>
+          </div>
+          <div className="link-container">
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`/`}
+              className="gif-view-link"
+            >
+              Go back!
+            </Link>
           </div>
         </div>
       );

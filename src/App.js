@@ -10,12 +10,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      gifs: []
+      gifs: [],
+      moregifs: 5
     };
   }
 
   componentDidMount() {
-    const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=20`;
+    const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${
+      this.state.moregifs
+    }`;
 
     axios
       .get(endpoint)
@@ -32,7 +35,9 @@ class App extends Component {
   }
 
   handleTermSearch = term => {
-    const endpoint = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=${REACT_APP_KEY}`;
+    const endpoint = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=${REACT_APP_KEY}&limit=${
+      this.state.moregifs
+    }`;
     console.log(term);
     axios
       .get(endpoint)
@@ -43,6 +48,39 @@ class App extends Component {
         });
         console.log("this are the gifs searched: ", this.state.gifs);
       })
+      .then(gifs => {
+        const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${
+          this.state.moregifs
+        }`;
+        if (this.state.gifs.length < 1) {
+          axios.get(endpoint).then(gifs => {
+            this.setState({
+              gifs: gifs.data.data
+            });
+          });
+        }
+      })
+      .catch(error => {
+        console.error("Server Error: ", error);
+      });
+  };
+
+  moreGifs = () => {
+    this.setState({
+      moregifs: this.state.moregifs + 5
+    });
+    const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${this
+      .state.moregifs + 5}`;
+    console.log(this.state.moregifs);
+    axios
+      .get(endpoint)
+      .then(gifs => {
+        console.log(gifs);
+        this.setState({
+          gifs: gifs.data.data
+        });
+        console.log("this are the gifs: ", this.state.gifs);
+      })
       .catch(error => {
         console.error("Server Error: ", error);
       });
@@ -51,12 +89,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar onTermChange={this.handleTermSearch} />
-
+        <Navbar onTermChange={term => this.handleTermSearch(term)} />
         <Route
           exact
           path="/"
-          render={props => <GifsContainer {...props} gifs={this.state.gifs} />}
+          render={props => (
+            <GifsContainer
+              {...props}
+              gifs={this.state.gifs}
+              moreGifs={this.moreGifs}
+            />
+          )}
         />
         <Route
           exact

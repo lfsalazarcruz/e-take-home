@@ -27,6 +27,12 @@ const GifsContainer = props => {
           </div>
         ))}
       </div>
+      <div className="moregifs-container">
+        <button className="moregifs-button" onClick={props.moreGifs}>
+          +
+        </button>
+        <p>more GIFS!</p>
+      </div>
     </div>
   );
 };
