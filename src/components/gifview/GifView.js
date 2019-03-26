@@ -60,9 +60,10 @@ class GifView extends Component {
             <div className="gif-view-item">
               <img
                 src={this.state.gifimage}
-                width="400px"
-                height="400px"
+                // width="400px"
+                // height="400px"
                 role="presentation"
+                className="gif-image"
               />
             </div>
             <div className="gif-view-item">
