@@ -75,7 +75,7 @@
 .moregifs-button:hover {
   background-color: #d21fff;
   cursor: pointer;
-  box-shadow: 5px 8px 8px #7a7a7a63;
+  /* box-shadow: 5px 8px 8px #7a7a7a63; */
 }
 
 @media (max-width: 500px) {
