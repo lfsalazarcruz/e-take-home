@@ -44,10 +44,11 @@
 }
 
 .moregifs-container {
-  border: 100%;
+  /* border: 100%; */
   display: flex;
-  justify-content: center;
-  margin: 20px 20px 80px;
+  justify-content: space-evenly;
+  margin: 20px auto 80px;
+  width: 400px;
 }
 
 .moregifs-button {
@@ -62,7 +63,6 @@
   display: inline-block;
   background-color: #ff1fcb;
   color: #fff;
-  margin-right: 10px;
   transition: all 0.3s;
 }
 
@@ -74,4 +74,17 @@
   background-color: #d21fff;
   cursor: pointer;
   box-shadow: 5px 8px 8px #7a7a7a63;
+}
+
+@media (max-width: 500px) {
+  .gifs-container {
+    margin-top: 10px;
+  }
+
+  .moregifs-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    width: 100%;
+  }
 }

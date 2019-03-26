@@ -82,7 +82,7 @@ class App extends Component {
         moregifs: this.state.moregifs
       });
       console.log(this.state.moregifs);
-      alert("STOP! DON'T DO THAT!");
+      alert("STOP! DON'T DO THAT! IT'S THE LAST GIF!!!");
     } else if (this.state.moregifs > 1) {
       this.setState({
         moregifs: this.state.moregifs - 1
