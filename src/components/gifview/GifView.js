@@ -28,7 +28,7 @@ class GifView extends Component {
 
     this.setState({ gif: gif });
 
-    const endpoint = `http://api.giphy.com/v1/gifs/${
+    const endpoint = `https://api.giphy.com/v1/gifs/${
       gif.id
     }?api_key=${REACT_APP_KEY}`;
     axios

@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${
+    const endpoint = `https://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${
       this.state.moregifs
     }`;
 
@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   handleTermSearch = term => {
-    const endpoint = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=${REACT_APP_KEY}&limit=${
+    const endpoint = `https://api.giphy.com/v1/gifs/search?q=${term}&api_key=${REACT_APP_KEY}&limit=${
       this.state.moregifs
     }`;
     console.log(term);
@@ -59,7 +59,7 @@ class App extends Component {
     this.setState({
       moregifs: this.state.moregifs + 3
     });
-    const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${this
+    const endpoint = `https://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${this
       .state.moregifs + 3}`;
     console.log(this.state.moregifs);
     axios
@@ -87,7 +87,7 @@ class App extends Component {
       this.setState({
         moregifs: this.state.moregifs - 1
       });
-      const endpoint = `http://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${this
+      const endpoint = `https://api.giphy.com/v1/gifs/search?q=trending&api_key=${REACT_APP_KEY}&limit=${this
         .state.moregifs - 1}`;
       console.log(this.state.moregifs);
       axios
